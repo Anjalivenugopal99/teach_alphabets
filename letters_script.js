@@ -50,6 +50,7 @@ function getAndAddImage(){
     // remove the previous images  
     var images = document.getElementById('letterImg'); 
     images.src = img_url;
+    images.setAttribute("letter",randomLetter);
     // var l = images.length;  
     // for (var p = 0; p < l; p++) {  
     //     images[0].parentNode.removeChild(images[0]);  
@@ -74,7 +75,21 @@ function save() {
                       "H", "I", "J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
             
             
-    alert(classNames[pIndex]);
+    var predictedLetter = classNames[pIndex];
+    var images = document.getElementById('letterImg'); 
+    var randomLetter = images.getAttribute("letter");
+    if(predictedLetter == randomLetter)
+    {
+        alert("You are correct!");
+        getAndAddImage();
+        erase();
+
+    }
+    else{
+        alert("Oops!! Try again")
+    }
+
+
 }
     
 function init() {
