@@ -40,13 +40,12 @@ function getAndAddImage(){
         return imageNameArray[imgNo];  
     }  
     var randomLetter = getRandomNum(0, imageNameArray.length - 1);
-    alert(randomLetter);
-    // var img_url = '{% static "/data/pics/filename.png" %}'.replace(filename,randomLetter);
-    var img_url = '{% static "/data/pics/A.png" %}';
-    var newimg = document.createElement("newimg");
-    newimg.src = img_url;
 
-    alert(newimg);
+    // var img_url = '{% static "/data/pics/filename.png" %}'.replace(filename,randomLetter);
+    var img_url = "/data/pics/A.png";
+    // var newimg = document.createElement("newimg");
+    // newimg.src = img_url;
+
     
     // remove the previous images  
     var images = document.getElementById('letterImg'); 
@@ -56,7 +55,7 @@ function getAndAddImage(){
     //     images[0].parentNode.removeChild(images[0]);  
     // }  
     // // display the new random image    
-    // document.body.appendChild(newimg); 
+    // document.getElementById('letterImg').appendChild(newimg); 
 
 }
     
