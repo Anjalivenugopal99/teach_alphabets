@@ -30,6 +30,30 @@ function erase() {
     ctx.fillStyle = "black";
     ctx.fillRect(0,0,280,280);
 }
+
+function getRandomNum(min, max){  
+    // generate and return a random number for the image to be displayed   
+    imgNo = Math.floor(Math.random() * (max - min + 1)) + min;  
+    return imageNameArray[imgNo];  
+}  
+
+function getAndAddImage(){
+    // 0 is first image and (preBuffer.length - 1) is last image of the array  
+    var randomLetter = getRandomNum(0, imageNameArray.length - 1); 
+    var img_url = '{% static "/data/pics/filename.png" %}'.replace(filename,randomLetter);
+    var newimg = document.createElement("newimg");
+    newimg.src = img_url;
+    
+    // remove the previous images  
+    var images = document.getElementsByTagName('letterImg');  
+    var l = images.length;  
+    for (var p = 0; p < l; p++) {  
+        images[0].parentNode.removeChild(images[0]);  
+    }  
+    // display the new random image    
+    document.body.appendChild(newimg); 
+
+}
     
 function save() {
     var raw = tf.browser.fromPixels(rawImage,1);
