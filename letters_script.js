@@ -2,7 +2,11 @@ import {LMnistData} from './letters_data.js';
 var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
-const model = await tf.loadLayersModel('localstorage://model/my_model.json');
+
+tf.loadLayersModel('model/my_model.json').then(function(model) {
+    window.model = model;
+  });
+
 
 function setPosition(e){
     pos.x = e.clientX-100;
@@ -32,7 +36,7 @@ function save() {
     var resized = tf.image.resizeBilinear(raw, [28,28]);
     var tensor = resized.expandDims(0);
     
-    var prediction = model.predict(tensor);
+    var prediction = window.model.predict(tensor);
     console.log("prediction"+ prediction);
     var pIndex = tf.argMax(prediction, 1).dataSync();
     console.log("pIndex"+ pIndex);
@@ -62,14 +66,10 @@ function init() {
 
 
 async function run() {
-    const data = new LMnistData();
-    await data.load();
-    const model = getModel();
-    tfvis.show.modelSummary({name: 'Model Architecture'}, model);
-    await train(model, data);
-    await model.save('downloads://my_model');
+    
+    
     init();
-    alert("Training is done, try classifying your drawings!");
+
 }
 
 document.addEventListener('DOMContentLoaded', run);
