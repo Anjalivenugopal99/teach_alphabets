@@ -42,11 +42,15 @@ function getAndAddImage(){
     var randomLetter = getRandomNum(0, imageNameArray.length - 1);
     alert(randomLetter);
     // var img_url = '{% static "/data/pics/filename.png" %}'.replace(filename,randomLetter);
-    // var newimg = document.createElement("newimg");
-    // newimg.src = img_url;
+    var img_url = '{% static "/data/pics/A.png" %}';
+    var newimg = document.createElement("newimg");
+    newimg.src = img_url;
+
+    alert(newimg);
     
-    // // remove the previous images  
-    // var images = document.getElementsByTagName('letterImg');  
+    // remove the previous images  
+    var images = document.getElementById('letterImg'); 
+    images.src = img_url;
     // var l = images.length;  
     // for (var p = 0; p < l; p++) {  
     //     images[0].parentNode.removeChild(images[0]);  
