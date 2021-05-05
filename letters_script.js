@@ -42,7 +42,7 @@ function getAndAddImage(){
     var randomLetter = getRandomNum(0, imageNameArray.length - 1);
 
     // var img_url = '{% static "/data/pics/filename.png" %}'.replace(filename,randomLetter);
-    var img_url = "/data/pics/A.png";
+    var img_url = "./data/pics/A.png".replace('A',randomLetter);
     // var newimg = document.createElement("newimg");
     // newimg.src = img_url;
 
