@@ -12,7 +12,7 @@
  
  We created a convolutional neural network that can classify the images of alphabets in the MNIST letters dataset. The CNN has conv2d, maxPooling2d,
  flatten, and dense layers. Since the MNIST letters has 26 letters, output layer should have 26 units and a softmax function.
- We are saving the tensor flow model as a json file.
+ We are saving the tensor flow model as a json file and model weights as a bin file.
  
  -> Predict the output
  
