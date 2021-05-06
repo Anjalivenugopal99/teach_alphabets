@@ -12,15 +12,13 @@
  const MNIST_IMAGES_SPRITE_PATH ='data_img.png';
  const MNIST_LABELS_PATH ='labels_img';
 
- // 1, 3, or 4 (Red+Green+Blue+Alpha)
  const NUM_CHANNELS = 1
 
  
  /**
-  * A class that fetches the sprited MNIST dataset and returns shuffled batches.
+  * A class that fetches the sprited MNIST letters dataset and returns shuffled batches.
   *
-  * NOTE: This will get much easier. For now, we do data fetching and
-  * manipulation manually.
+  *
   */
  export class LMnistData {
    constructor() {
@@ -42,7 +40,7 @@
          const datasetBytesBuffer =
              new ArrayBuffer(NUM_DATASET_ELEMENTS * IMAGE_SIZE * 4*NUM_CHANNELS);
  
-         const chunkSize    = Math.floor(NUM_TEST_ELEMENTS * 0.15)// 400; // change to 10 //change to 9600
+         const chunkSize    = Math.floor(NUM_TEST_ELEMENTS * 0.15)
          canvas.width = img.width;
          canvas.height = chunkSize;
  
