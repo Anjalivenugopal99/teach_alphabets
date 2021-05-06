@@ -1,11 +1,16 @@
-# A Simple Machine Learning Alphabets Learning App using TensorFlow.js
+# Machine Learning Alphabets Learning App using TensorFlow.js
+
+
+ https://anjalivenugopal99.github.io/teach_alphabets/
+ 
+ 
  This app lets you to guess the alphabets based on the random images appearing on the screen and it recognizes your drawings using machine learning tools.
  
  This model includes the following steps.
  
  -> Training Data
  
-  we are going to use the MNIST letters dataset which is a dataset of handwritten images of english alphabets. Its difficult to train the different images in the 
+  we are using the MNIST letters dataset which is a dataset of handwritten images of english alphabets. Its difficult to train the different images in the 
   web browser, so we transfer the images to sprite sheet(everything is combined into a single image). MNISTalphabets_data_extraction.ipynb file includes the sprite sheet generator using python.
   
  -> Machine Learning
@@ -17,6 +22,7 @@
  -> Predict the output
  
   Using the html canvas , we can draw images and predict the output based on the drawing.
+  
   
  
 
