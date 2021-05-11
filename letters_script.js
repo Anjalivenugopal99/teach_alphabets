@@ -8,7 +8,7 @@ tf.loadLayersModel('model/my_model.json').then(function(model) {
 
 
 function setPosition(e){
-    pos.x = e.clientX-100;
+    pos.x = e.clientX-140;
     pos.y = e.clientY-100;
 }
     
